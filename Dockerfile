@@ -11,5 +11,6 @@ RUN uv sync --frozen --no-dev --no-install-project
 
 COPY . .
 RUN uv sync --frozen --no-dev
+RUN chmod +x entrypoint.sh
 
-CMD ["uv", "run", "python", "-m", "stateful_mcp.main"]
+ENTRYPOINT ["./entrypoint.sh"]
